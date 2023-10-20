@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TASK_MANAGER</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
+      rel="stylesheet" />
+  </head>
+  <body>
+    <div class="container">
+
+      <nav class="nav-bar">
+        <div class="btns-inner">
+          <button class="btn-nav" id="btn-add">Добавить</button>
+          <button class="btn-nav" id="btn-load">Обновить</button>
+          <button class="btn-nav" id="btn-nav">Войти</button>
+      </div>
+        <h1>TASK_MANAGER</h1>
+      </nav>
+
+        <H1 id="hello-title" class="header-text" ></H1>
+      
+      <section >
+        <select id="sort-task">
+        <option disabled>Отсортировать</option>
+        <option value="date-create">По дате создания</option>
+        <option value="date-deadline">По сроку выполнения</option>
+       </select>
+        <div class="tasks" id="tasks">
+          
+        </div>
+      </section>
+
+
+      <div id="myModal" class="modal">
+        
+          <form id="taskForm">
+          <span class="btn btn-close" id="btn-close">&times;</span>
+          <h2>Задача</h2>
+            <div class="form-attribute">
+            <label for="title">Название задачи:</label>
+            <input type="text" id="title" required>
+          </div>
+          <div class="form-attribute">
+            <label for="deadline">Дедлайн:</label>
+            <input type="date" id="deadline">
+          </div>
+          <div class="form-attribute">
+            <label for="description">Описание задачи:</label>
+            <textarea id="description"></textarea>
+          </div>
+          <div class="btns-inner">
+            <input type="submit" value="Сохранить" class="btn" >
+          </div>
+          </form>
+        
+      </div>
+
+      <div id="myModalAdd" class="modal">
+        
+        <form id="taskFormAdd">
+        <span class="btn btn-close" id="btn-close">&times;</span>
+        <h2>Добавить задачу</h2>
+          <div class="form-attribute">
+          <label for="title">Название задачи:</label>
+          <input type="text" id="title" required>
+        </div>
+        <div class="form-attribute">
+          <label for="deadline">Дедлайн:</label>
+          <input type="date" id="deadline">
+        </div>
+        <div class="form-attribute">
+          <label for="description">Описание задачи:</label>
+          <textarea id="description"></textarea>
+        </div>
+        <div class="btns-inner">
+          <input type="submit" value="Добавить" class="btn" >
+        </div>
+        </form>
+      
+    </div>
+
+      <template id="task-template">
+        <div class="task">
+          <h2 class="task-title"></h2>
+          <p class="task-description"></p>
+          <p class="task-date"></p>
+          <button class="btn edit-task-btn">редактировать</button>
+          <button class="btn delete-task-btn" >Удалить</button>
+          <button class="btn status-btn">&#10003;</button>
+        </div>
+      </template>
+
+
+
+      <div id="div-login" class="modal">
+        <form id="form-login" class="form">
+          <span class="btn btn-close" id="btn-close">&times;</span>
+          <p id="login-status">Введите данные</p>
+          <h1 class="header-text">Войти</h1>
+
+          <div class="form-attribute">
+            <label for="email">Введите электронную почту</label>
+            <input type="email" name="email" id="email" />
+          </div>
+          <div class="form-attribute">
+            <label for="password">Введите пароль</label>
+            <input type="password" name="password" id="password" />
+          </div>
+          <div class="btns-inner">
+            <button type="submit" class="btn">Войти</button>
+            <button type="button" class="btn" id="registration">
+              Зарегистрироваться
+            </button>
+          </div>
+        </form>
+      </div>
+
+      <div id="div-registration" class="modal">
+        <form id="form-registration" class="form">
+          <span class="btn btn-close" id="btn-close">&times;</span>
+          <p id="login-status">Введите данные</p>
+          <h1 class="header-text">Регистрация</h1>
+
+          <div class="form-attribute">
+            <label for="name">Введите имя</label>
+            <input type="text" name="name" id="name" />
+          </div>
+          <div class="form-attribute">
+            <label for="email">Введите электронную почту</label>
+            <input type="email" name="email" id="email" />
+          </div>
+          <div class="form-attribute">
+            <label for="password">Введите пароль</label>
+            <input type="password" name="password" id="password" />
+          </div>
+          <div class="btns-inner">
+            <button type="button" id="login" class="btn">Войти</button>
+            <button type="submit" class="btn">Зарегистрироваться</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <script type="module" id="" src="jwt.decode.js"></script>
+    <script type="module" src="index.js"></script>
+  </body>
+</html>

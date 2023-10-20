@@ -1,0 +1,70 @@
+POST http://localhost:8080/api/users 
+Content-Type: application/json
+
+{
+   "name": "Fred",
+   "email": "fred@mail.ru",
+   "password": "fred"
+}
+
+###
+
+POST http://localhost:8080/api/auth/login
+Content-Type: application/json
+
+{
+   "email": "Igor2@mail.ru",
+   "password": "12345"
+}
+
+###
+
+POST http://localhost:8080/api/auth/registration
+Content-Type: application/json
+
+{
+   "name":"Egor",
+   "email": "Egor1@mail.com",
+   "password": "12345"
+}
+
+
+###
+
+GET http://localhost:8080/api/users 
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTcsIm5hbWUiOiJFZ29yIiwiZW1haWwiOiJFZ29yQGVtYWlsLmNvbSIsImlhdCI6MTY5NjYwMTcyNywiZXhwIjoxNjk2NjAyNTI3fQ.IUClxjSEJRSDZ5OYlgh9y19_th55PaWnekfOpkOQqZk
+###
+
+GET http://localhost:8080/api/auth/refresh_token
+
+###
+
+DELETE http://localhost:8080/api/auth/refresh_token
+
+### 
+
+GET http://localhost:8080/task
+
+###
+POST http://localhost:8080/task-add
+
+Content-Type: application/json
+
+{
+   "title":"РАБОТАТЬ",
+   "description":"НАДО РАБОТАТЬ",
+   "deadline":"13.10.2023"
+   
+}
+
+
+###
+
+DELETE  http://localhost:8080/task/:id 
+
+Content-Type: application/json
+
+{
+   "id":"3"
+}
+
